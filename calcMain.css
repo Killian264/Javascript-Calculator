@@ -1,0 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    height: 5.5vh;
+    background-color:  rgba(0, 0, 0, .9);
+    border-bottom:  1px;
+    border-bottom-style: solid;
+    border-color: white;
+    white-space: nowrap;
+    position: fixed;
+    width: 100%; 
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: rgb(219, 219, 219);
+    letter-spacing: 1px;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    padding-right: .5%;
+}
+
+.navlinks a{
+    color: rgb(219, 219, 219);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 17px;
+    padding-left: 40px;
+    padding-right: 5px;
+
+}
+.toggle{
+    color: rgb(219, 219, 219);
+}
+.navlinks img{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding-left: 0px;
+} 
+.navlinks li{
+    list-style: none;
+    padding-left: 20px;
+}
+.navdropdown{
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+body{
+    background: gray;
+}
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+        background-position-x: 50%
+    }
+    .navlinks img{
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        color: white;
+        display: none;
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .navlinks{
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        background-color:  rgba(0, 0, 0, .9);
+        top: 5.6vh;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        padding-right: 0;
+        padding-left: 0;
+        position: absolute;
+    }
+    .download{
+        display: none;
+    }
+    .navlinks li{
+        opacity: 0;
+        padding-left: 0;
+    }
+    .navlinks a{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navdropdown{
+        display: block;
+        padding-top: 1.1%;
+        position: relative;
+        top: 50%;
+        margin-top: -24px;
+    }
+    .navdropdown div{
+        width: 22px;
+        height: 2px;
+        background-color: rgb(219, 219, 219);
+        margin: 6.5px;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-6px, 6px);
+    transition-duration: 500ms;
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-6px, -6px);
+    transition-duration: 500ms;
+}
+.calcWrapper{
+    padding-top: 5%;
+    margin-left: calc(50% - 150px);
+}
+.calc{
+    width: 322px;
+    padding: 3px;
+    padding-top: 5px;
+    color: white;
+    background: rgb(32, 31, 31);
+}
+
+.calc ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 3px;
+    background: rgb(32, 31, 31);
+    /* -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; */
+}
+.calc li{
+    flex: 1 1 24%;
+    margin: 1px;
+    background: rgb(12, 12, 12);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding-top: 20px;
+    /* height: 48px; */
+    height: 60px;
+    font-size: 18px;
+    cursor: default;
+}
+.calc li:hover{
+    background: rgb(75, 75, 75);
+}
+.calc .outputArea{
+    align-items: flex-end;
+    text-align: right;
+    margin-right: 3px;
+}
+#output{
+    font-size: 50px;
+    height: 90px;
+    padding-top: 15px;
+}
+.calc span{
+    font-size: 22px;
+    margin-left: 3px;
+}
+#history{
+    padding: 8px;
+    font-weight: normal;
+    height: 22px;
+}
+.calc .number{
+    padding-top: 17px;
+    font-weight: bold;
+    font-size: 23px;
+    background: black;
+}
