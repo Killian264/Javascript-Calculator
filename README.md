@@ -1,12 +1,11 @@
 # Javascript-Calculator
 
-Simple Javascript Calculator 
+What I learned:
 
-Plans{
+Dom navigation
 
-  add a google calc esc version
-  
-  add more buttons
-  
+Changing css in JS
 
-}
+Event Listeners
+
+Array Functions
